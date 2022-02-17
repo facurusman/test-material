@@ -18,11 +18,12 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HistoryComponent } from './components/history/history.component';
 import { ErroresComponent } from './components/errores/errores.component';
+import { HomeComponenteComponent } from './components/home-componente/home-componente.component';
 
 
 const appRoutes:Routes=[
 
-  {path:'',component:AppComponent},
+  {path:'',component:HomeComponenteComponent},
   {path:'productos', component:ProductsComponent},
   {path:'historia', component:HistoryComponent},
   {path:'contacto', component:ContactComponent},
@@ -42,7 +43,8 @@ const appRoutes:Routes=[
     ContactComponent,
     FooterComponent,
     HistoryComponent,
-    ErroresComponent
+    ErroresComponent,
+    HomeComponenteComponent
   ],
   imports: [
     BrowserModule,
