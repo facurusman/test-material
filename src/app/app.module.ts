@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
+import { MatInputModule } from '@angular/material/input';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field'
 
 
 
@@ -54,6 +57,9 @@ const appRoutes:Routes=[
     MatButtonModule,
     CommonModule,
     MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
     [RouterModule.forRoot(appRoutes)],
 
   ],

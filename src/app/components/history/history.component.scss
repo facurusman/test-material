@@ -1,16 +1,18 @@
 .contenedor{
   display: flex ;
   flex-direction: column;
-  width: 100%;
-  background-color: #ddd;
+  width: 100vw;
+  background-color: #AFAFAF;
   gap: 1em;
   padding-top: 100px;
+  color: #000;
 }
 
 
 .contenedor h1{
   display: flex ;
   justify-content: center;
+  color: #000;
 }
 .item{
   display: flex;
