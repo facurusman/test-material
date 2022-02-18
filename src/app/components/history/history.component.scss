@@ -1,0 +1,42 @@
+.contenedor{
+  display: flex ;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ddd;
+  gap: 1em;
+  padding-top: 100px;
+}
+
+
+.contenedor h1{
+  display: flex ;
+  justify-content: center;
+}
+.item{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15%;
+  align-items: center;
+
+}
+
+.item img{
+  display: flex ;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.item p{
+  display: flex;
+  text-align: justify;
+  justify-content: center;
+  min-width: 200px;
+  max-width: 500px;
+}
