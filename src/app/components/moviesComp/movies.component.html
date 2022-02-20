@@ -1,0 +1,23 @@
+<div class="container">
+
+  <mat-card class="example-card" *ngFor="let item of pelisPopulares.results">
+    <mat-card-title-group>
+      <mat-card-title>{{item.original_title}}</mat-card-title>
+      <mat-card-subtitle>
+        {{item.release_date}}
+      </mat-card-subtitle>
+      <img mat-card-md-image src="https://image.tmdb.org/t/p/w185/{{item.poster_path}} ">
+    </mat-card-title-group>
+    <mat-card-content>
+      <!-- Aca va la descripcion de la pelicula -->
+      {{item.overview | slice: 0 : 100}}
+    </mat-card-content>
+    <button mat-raised-button color="primary"><a [routerLink]="['/descripcion', item.id]">Ver Mas</a></button>
+  </mat-card>
+
+
+
+
+
+
+</div>
