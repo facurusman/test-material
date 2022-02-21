@@ -27,6 +27,8 @@ import { HomeComponenteComponent } from './components/home-componente/home-compo
 import { MoviesService } from './services/movies.service';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
 import { ReviewsService } from './services/reviews.service';
+import { DetailsService } from './services/details.service';
+import { SimilarService } from './services/similar.service';
 
 
 const appRoutes:Routes=[
@@ -72,7 +74,7 @@ const appRoutes:Routes=[
   ],
   exports: [RouterModule],
 
-  providers: [MoviesService, ReviewsService],
+  providers: [MoviesService, ReviewsService, DetailsService, SimilarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

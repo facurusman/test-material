@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DetailsService } from 'src/app/services/details.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
+import { SimilarService } from 'src/app/services/similar.service';
 import { MoviesService } from '../../services/movies.service';
 
 @Component({
@@ -10,32 +12,28 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class DescripcionComponent implements OnInit {
   id: any;
-  pelisPopulares: any;
-  pelicula:any
+  detail:any
+  reviewFiltrada : any;
+  similars : any;
 
-
-  reviewFiltrada : any
-
-  constructor(private route:ActivatedRoute, private peliculasServicio : MoviesService, private reviewsServicio : ReviewsService) {
+  constructor(private route:ActivatedRoute,private reviewsServicio : ReviewsService, private detailServicio: DetailsService, private similarServicio : SimilarService) {
   }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id']
-    this.encontrarPelicula(this.id)
+    this.encontrarPelicula()
     this.mostrarReview()
+    this.mostrarSimilars()
   }
 
 
 
 
-  encontrarPelicula(id:number){
-    this.peliculasServicio.getPopulars().subscribe( (response) => {
+  encontrarPelicula(){
+    this.detailServicio.getDetail(this.id).subscribe( (response) => {
 
-      this.pelisPopulares = response
-      let peliculas = this.pelisPopulares.results
-      this.pelicula = peliculas.filter(id)
-     })
-
+      this.detail = response
+    })
   }
 
   mostrarReview(){
@@ -45,6 +43,11 @@ export class DescripcionComponent implements OnInit {
      })
   }
 
+  mostrarSimilars(){
+    this.similarServicio.getSimilars(this.id).subscribe( (response) => {
 
+      this.similars = response
+     })
+  }
 
 }

@@ -3,7 +3,7 @@
 .example-card {
   min-width: 200px;
   max-width: 400px;
-  margin-bottom: 8px; 
+  margin-bottom: 8px;
 }
 .container{
   display:flex;
@@ -20,3 +20,25 @@
   color: #fff;
   text-decoration: none;
 }
+
+
+.detail-card{
+  margin: 0 100px;
+}
+
+.detail-card img{
+
+
+  width: max-content;
+  height: max-content;
+}
+
+
+
+.similar-card{
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+
