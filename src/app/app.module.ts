@@ -1,20 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http"
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-import { MatInputModule } from '@angular/material/input';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field'
-
-
-
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,21 +18,6 @@ import { HomeComponenteComponent } from './components/home-componente/home-compo
 import { MoviesService } from './services/movies.service';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
 
-const appRoutes:Routes=[
-
-  {path:'',component:HomeComponenteComponent},
-  {path:'peliculas', component:MoviesComponent},
-  {path:'historia', component:HistoryComponent},
-  {path:'contacto', component:ContactComponent},
-  {path:'descripcion/:id', component:DescripcionComponent},
-  {path:'**', component: ErroresComponent}
-
-
-]
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,25 +28,17 @@ const appRoutes:Routes=[
     HistoryComponent,
     ErroresComponent,
     HomeComponenteComponent,
-    DescripcionComponent
+    DescripcionComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    CommonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
     HttpClientModule,
-    [RouterModule.forRoot(appRoutes)],
-
+    AppRoutingModule,
+    SharedModule
   ],
   exports: [RouterModule],
-
   providers: [MoviesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
