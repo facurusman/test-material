@@ -1,27 +1,25 @@
 <div class="container">
 
 
-  <mat-card class="detail-card">
+  <mat-card class="detail-card" *ngFor="let i of detail">
     <mat-card-title-group>
       <mat-card-title>
-        {{detail.original_title}}
+        {{i.original_title}}
       </mat-card-title>
-      <img mat-card-md-image src="https://image.tmdb.org/t/p/w185/{{detail.backdrop_path}}">
-      <mat-card-subtitle *ngFor="let item of detail.genres">
-        {{item.name}}
+      <img mat-card-md-image src="https://image.tmdb.org/t/p/w185/{{i.backdrop_path}}">
+      <mat-card-subtitle>
+        {{i.genres}}
       </mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
       <!-- Aca va la descripcion de la pelicula -->
-      {{detail.overview}}
+      {{i.overview}}
     </mat-card-content>
     <p>Production Companies</p>
     <ul>
-
-      <mat-card-subtitle *ngFor="let i of detail.production_companies">
-        <li>{{i.name}}</li>
+      <mat-card-subtitle>
+        <li>{{i.production_companies}}</li>
       </mat-card-subtitle>
-
     </ul>
   </mat-card>
 
@@ -46,7 +44,7 @@
 
 
 
-  <mat-card class="similar-card" *ngFor="let y of similars.results">
+  <mat-card class="similar-card" *ngFor="let y of similars">
     <mat-card-title-group>
       <mat-card-title>
         {{y.original_title}}

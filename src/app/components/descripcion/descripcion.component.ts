@@ -1,8 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DetailsService } from 'src/app/services/details.service';
-import { ReviewsService } from 'src/app/services/reviews.service';
-import { SimilarService } from 'src/app/services/similar.service';
 import { MoviesService } from '../../services/movies.service';
 
 @Component({
@@ -16,7 +13,7 @@ export class DescripcionComponent implements OnInit {
   reviewFiltrada : any;
   similars : any;
 
-  constructor(private route:ActivatedRoute,private reviewsServicio : ReviewsService, private detailServicio: DetailsService, private similarServicio : SimilarService) {
+  constructor(private route:ActivatedRoute,private movieService: MoviesService) {
   }
 
   ngOnInit(): void {
@@ -30,21 +27,19 @@ export class DescripcionComponent implements OnInit {
 
 
   encontrarPelicula(){
-    this.detailServicio.getDetail(this.id).subscribe( (response) => {
-
+    this.movieService.getDetail(this.id).subscribe( (response) => {
       this.detail = response
     })
   }
 
   mostrarReview(){
-    this.reviewsServicio.getReviews(this.id).subscribe( (response) => {
+    this.movieService.getReviews(this.id).subscribe( (response) => {
       this.reviewFiltrada = response
      })
   }
 
   mostrarSimilars(){
-    this.similarServicio.getSimilars(this.id).subscribe( (response) => {
-
+    this.movieService.getSimilars(this.id).subscribe( (response) => {
       this.similars = response
      })
   }

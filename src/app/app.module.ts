@@ -26,10 +26,6 @@ import { ErroresComponent } from './components/errores/errores.component';
 import { HomeComponenteComponent } from './components/home-componente/home-componente.component';
 import { MoviesService } from './services/movies.service';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
-import { ReviewsService } from './services/reviews.service';
-import { DetailsService } from './services/details.service';
-import { SimilarService } from './services/similar.service';
-
 
 const appRoutes:Routes=[
 
@@ -74,7 +70,7 @@ const appRoutes:Routes=[
   ],
   exports: [RouterModule],
 
-  providers: [MoviesService, ReviewsService, DetailsService, SimilarService],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
