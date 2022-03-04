@@ -29,6 +29,7 @@ export class DescripcionComponent implements OnInit {
   encontrarPelicula(){
     this.movieService.getDetail(this.id).subscribe( (response) => {
       this.detail = response
+      console.log(this.detail)
     })
   }
 
