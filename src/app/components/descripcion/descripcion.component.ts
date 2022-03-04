@@ -38,7 +38,6 @@ export class DescripcionComponent implements OnInit {
 
   mostrarReview(){
     this.reviewsServicio.getReviews(this.id).subscribe( (response) => {
-
       this.reviewFiltrada = response
      })
   }
