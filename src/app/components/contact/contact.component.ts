@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Movie } from 'src/app/models/movie';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,12 +10,25 @@ import { FormControl } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+
+  movies: Movie[] = [];
+  movie = new Movie()
+  respuesta: any;
+  constructor(private movieService:MoviesService) {
+}
 
   ngOnInit(): void {
+    this.createMovie()
   }
-  name = new FormControl('');
 
 
+
+
+
+  createMovie(){
+    this.movieService.postPopular(this.movie).subscribe( (response) => {
+      this.respuesta = response
+    })
+  }
 
 }

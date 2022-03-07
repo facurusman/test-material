@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Movie } from '../models/movie';
+
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +27,11 @@ export class MoviesService {
   getSimilars(id: number) {
     const url = `${environment.apiUrl}/similars/${id}`;
     return this.http.get(url);
+  }
+
+
+  postPopular(movie : Movie){
+    const body = JSON.stringify(movie)
+    return this.http.post(environment.apiUrl, body)
   }
 }

@@ -2,18 +2,18 @@
 <div class="container">
   <h2>Create Movie</h2>
   <mat-form-field appearance="fill">
-    <mat-label class="title" for="name">Title</mat-label>
-    <input matInput class="titleclass" [formControl]="name">
+    <mat-label class="title">Title</mat-label>
+    <input name="original_title" [(ngModel)]="respuesta.original_title" minlength="5">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Description</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="movie.overview" minlength="5"></textarea>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput type="number" placeholder="Popularity" class="popularity">
+    <input matInput type="number" placeholder="Popularity" class="popularity" [(ngModel)]="movie.popularity">
   </mat-form-field>
 
-  <button mat-raised-button color="warn" type="submit">Send</button>
+  <button mat-raised-button color="warn" type="submit"><a [routerLink]="['']">Send</a></button>
 </div>
