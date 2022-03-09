@@ -16,7 +16,9 @@ export class ContactComponent implements OnInit {
   respuesta!: Movie;
   constructor(private movieService: MoviesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("asdasdas");
+  }
 
   onSend() {
     const movie = new Movie({
@@ -26,7 +28,6 @@ export class ContactComponent implements OnInit {
       realese_date: this.realese_date,
     });
     this.movieService.postPopular(movie).subscribe((response) => {
-      console.log(movie)
       console.log(response)
     });
   }

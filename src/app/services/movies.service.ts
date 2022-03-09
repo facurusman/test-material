@@ -32,7 +32,6 @@ export class MoviesService {
 
 
   postPopular(movie : Movie){
-    const body = JSON.stringify(movie)
-    return this.http.post(environment.apiUrl, body)
+    return this.http.post(environment.apiUrl, movie)
   }
 }
