@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { Movie } from 'src/app/models/movie';
 import { MoviesService } from '../../services/movies.service';
 
@@ -27,7 +26,7 @@ export class ContactComponent implements OnInit {
       realese_date: this.realese_date,
     });
     this.movieService.postPopular(movie).subscribe((response) => {
-      this.respuesta = response;
+      console.log(movie)
       console.log(response)
     });
   }

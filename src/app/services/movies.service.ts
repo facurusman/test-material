@@ -31,8 +31,8 @@ export class MoviesService {
   }
 
 
-  postPopular(movie : Movie): Observable<Movie>{
+  postPopular(movie : Movie){
     const body = JSON.stringify(movie)
-    return this.http.post<Movie>(environment.apiUrl, body)
+    return this.http.post(environment.apiUrl, body)
   }
 }
