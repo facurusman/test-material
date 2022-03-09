@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { MatCardModule } from '@angular/material/card';
@@ -69,7 +69,7 @@ export const MaterialModules = [
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModules],
-  exports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModules],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModules, FormsModule],
+  exports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModules, FormsModule],
 })
 export class SharedModule {}

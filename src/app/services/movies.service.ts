@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Movie } from '../models/movie';
 
@@ -30,8 +31,8 @@ export class MoviesService {
   }
 
 
-  postPopular(movie : Movie){
+  postPopular(movie : Movie): Observable<Movie>{
     const body = JSON.stringify(movie)
-    return this.http.post(environment.apiUrl, body)
+    return this.http.post<Movie>(environment.apiUrl, body)
   }
 }

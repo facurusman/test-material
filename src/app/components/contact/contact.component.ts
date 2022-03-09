@@ -6,29 +6,29 @@ import { MoviesService } from '../../services/movies.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
+  original_title: string = '';
+  overview: string = '';
+  popularity: number = 0;
+  realese_date: string = '';
 
+  respuesta!: Movie;
+  constructor(private movieService: MoviesService) {}
 
-  movies: Movie[] = [];
-  movie = new Movie()
-  respuesta: any;
-  constructor(private movieService:MoviesService) {
-}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.createMovie()
+  onSend() {
+    const movie = new Movie({
+      original_title: this.original_title,
+      overview: this.overview,
+      popularity: this.popularity,
+      realese_date: this.realese_date,
+    });
+    this.movieService.postPopular(movie).subscribe((response) => {
+      this.respuesta = response;
+      console.log(response)
+    });
   }
-
-
-
-
-
-  createMovie(){
-    this.movieService.postPopular(this.movie).subscribe( (response) => {
-      this.respuesta = response
-    })
-  }
-
 }
