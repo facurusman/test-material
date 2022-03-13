@@ -34,4 +34,8 @@ export class MoviesService {
   postPopular(movie : Movie){
     return this.http.post(environment.apiUrl, movie)
   }
+
+  deletePopular(id:number){
+    return this.http.delete(`${environment.apiUrl}${id}`)
+  }
 }

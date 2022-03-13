@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
       realese_date: this.realese_date,
     });
     this.movieService.postPopular(movie).subscribe((response) => {
+      location.reload()
       console.log(response)
     });
   }

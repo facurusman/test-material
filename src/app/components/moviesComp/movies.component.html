@@ -1,5 +1,4 @@
 <div class="container">
-
   <mat-card class="example-card" *ngFor="let item of pelisPopulares">
     <mat-card-title-group>
       <mat-card-title>{{item.original_title}}</mat-card-title>
@@ -13,11 +12,8 @@
       {{item.overview | slice: 0 : 100}}
     </mat-card-content>
     <button mat-raised-button color="primary"><a [routerLink]="['/descripcion', item.id]">Ver Mas</a></button>
+    <button mat-fab color="warn" aria-label="Example icon button with a delete icon" id="button_delete" (click)="onDelete(item.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
   </mat-card>
-
-
-
-
-
-
 </div>

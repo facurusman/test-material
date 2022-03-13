@@ -9,6 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MoviesComponent implements OnInit {
 
   pelisPopulares : any
+  moviesDelete: any;
 
   constructor(private moviesService: MoviesService) { }
 
@@ -25,6 +26,12 @@ export class MoviesComponent implements OnInit {
   }
 
 
+  onDelete(id:number){
+    this.moviesService.deletePopular(id).subscribe( (response) => {
+      location.reload()
+      this.moviesDelete = response
+     })
+  }
 
 
 }
