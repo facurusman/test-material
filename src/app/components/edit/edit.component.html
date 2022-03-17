@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h2>Create Movie</h2>
+  <h2>Edit Movie</h2>
   <mat-form-field appearance="fill">
     <mat-label class="title">Title</mat-label>
     <input matInput name="original_title" [(ngModel)]="original_title" minlength="5">
@@ -19,5 +19,5 @@
     <input matInput name="realese_date" [(ngModel)]="realese_date" minlength="5">
   </mat-form-field>
 
-  <button mat-raised-button color="warn"(click)="onEdit()">Send</button>
+  <button mat-raised-button color="warn"(click)="onEdit()" [routerLink]="['']">Send</button>
 </div>

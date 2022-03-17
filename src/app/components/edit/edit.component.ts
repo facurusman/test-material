@@ -20,9 +20,12 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.moviesService.getDetail(this.route.snapshot.params['id']).subscribe( (response: any) => {
-      console.log(response)
-      this.original_title = response[0].original_title
+    this.moviesService.getPopular(this.id).subscribe( (response: any) => {
+
+      this.original_title = response.original_title
+      this.overview = response.overview
+      this.popularity = response.popularity
+      this.realese_date = response.realese_date
       //otrod
      })
   }
@@ -35,8 +38,7 @@ export class EditComponent implements OnInit {
       realese_date: this.realese_date,
     });
     this.moviesService.editar(movie, this.id ).subscribe((response) => {
-      //location.reload()
-      //console.log(response)
+      return response
     });
   }
 

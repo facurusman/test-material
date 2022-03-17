@@ -17,7 +17,6 @@ export class ContactComponent implements OnInit {
   constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
-    console.log("asdasdas");
   }
 
   onSend() {

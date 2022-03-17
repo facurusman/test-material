@@ -1,0 +1,49 @@
+.example-card {
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  gap: 1em;
+  background-color: #ddd;
+  padding: 1em 0;
+}
+
+.example-card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.detail-card {
+  margin: 0 100px;
+}
+
+.detail-card img {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.similar-card {
+  min-width: 200px;
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+/*# sourceMappingURL=descripcion.component.css.map */

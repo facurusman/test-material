@@ -15,6 +15,10 @@ export class MoviesService {
     return this.http.get(environment.apiUrl);
   }
 
+  getPopular(id: number) {
+    const url = `${environment.apiUrl}/${id}`;
+    return this.http.get(url);
+  }
   getDetail(id: number) {
     const url = `${environment.apiUrl}/details/${id}`;
     return this.http.get(url);
