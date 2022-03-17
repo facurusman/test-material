@@ -35,6 +35,12 @@ export class MoviesService {
     return this.http.post(environment.apiUrl, movie)
   }
 
+  editar(movie : Movie, id: number){
+    //agarrar lo que viene de la base y editarlo.
+    //console.log(movie)
+    return this.http.post(`${environment.apiUrl}/edit/${id}`, movie)
+  }
+
   deletePopular(id:number){
     return this.http.delete(`${environment.apiUrl}${id}`)
   }

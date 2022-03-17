@@ -17,6 +17,7 @@ import { ErroresComponent } from './components/errores/errores.component';
 import { HomeComponenteComponent } from './components/home-componente/home-componente.component';
 import { MoviesService } from './services/movies.service';
 import { DescripcionComponent } from './components/descripcion/descripcion.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DescripcionComponent } from './components/descripcion/descripcion.compo
     ErroresComponent,
     HomeComponenteComponent,
     DescripcionComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

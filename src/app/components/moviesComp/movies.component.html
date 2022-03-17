@@ -15,5 +15,8 @@
     <button mat-fab color="warn" aria-label="Example icon button with a delete icon" id="button_delete" (click)="onDelete(item.id)">
       <mat-icon>delete</mat-icon>
     </button>
+    <button mat-fab color="warn" aria-label="Example icon button with a delete icon" id="button_edit" (click)="onEdit(item.id)">
+      <mat-icon><a [routerLink]="['/edit', item.id]">edit</a></mat-icon>
+    </button>
   </mat-card>
 </div>

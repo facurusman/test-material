@@ -33,5 +33,8 @@ export class MoviesComponent implements OnInit {
      })
   }
 
+  onEdit(id : number ){
+    
+  }
 
 }
